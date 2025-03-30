@@ -2,7 +2,9 @@
 # Code
 
 # A clinically relevant spatial single-cell landscape of pancreatic cancer
-[IMCpaper Website](https://jhuanglab.github.io/IMCpaper/)
+
+[IMCpaper Website](https://jhuanglab.github.io/IMCpaper/)(https://jhuanglab.github.io/IMCpaper/)
+
 This repository contains all code used to produce the results and figures of the publication "Single-Cell-Based Clinically-Related Mesoscale Pathology of Pancreatic Cancer".
 
 Visulization for figures:
