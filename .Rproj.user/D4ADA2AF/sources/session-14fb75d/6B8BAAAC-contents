@@ -1,0 +1,19 @@
+# Preface {.unnumbered}
+
+This is a Quarto book of code accompanying our manuscript "A clinically relevant spatial single-cell landscape of pancreatic cancer".
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false 
+pkgs <- c("ggthemes", "jhtools", "glue", "ggsci", "patchwork", "tidyverse",
+          "circlize", "ComplexHeatmap", "SummarizedExperiment", "jhuanglabRNAseq",
+          "viridis","ggrepel", "tidygraph", "ggraph")
+for (pkg in pkgs){
+  suppressPackageStartupMessages(library(pkg, character.only = T))
+}
+```
+
+```{r}
+sessionInfo()
+```

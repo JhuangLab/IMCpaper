@@ -1,0 +1,32 @@
+{
+    "id": "8468EF3F",
+    "path": "~/projects/hyperion/code/code_for_quarto_book/hyperion_quarto_book/figure1.qmd",
+    "project_path": "figure1.qmd",
+    "type": "quarto_markdown",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1742366272557.0,
+    "source_on_save": false,
+    "relative_order": 3,
+    "properties": {
+        "rmdVisualMode": "false",
+        "rmdVisualWrapConfigured": "true",
+        "source_window_id": "",
+        "Source": "Source",
+        "docOutlineVisible": "1",
+        "cursorPosition": "270,0",
+        "scrollLine": "43",
+        "rmdVisualModeLocation": "750:1.3333333730697632",
+        "rmdVisualCollapsedChunks": "",
+        "docOutlineSize": "101"
+    },
+    "folds": "50|11|82|0|\n83|11|194|0|\n195|16|221|0|\n222|11|260|0|\n",
+    "lastKnownWriteTime": 1742782253,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1742782386096,
+    "read_only": false,
+    "read_only_alternatives": []
+}

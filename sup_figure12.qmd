@@ -1,0 +1,448 @@
+# sup_figure12
+
+```{r sup_figure12}
+#| echo: true
+#| warning: false
+#| message: false 
+pkgs <- c("fs", "futile.logger", "configr", "stringr", "ggpubr", "ggthemes", 
+          "SingleCellExperiment", "BiocNeighbors", "vroom", "jhtools", "glue", 
+          "openxlsx", "ggsci", "patchwork", "cowplot", "tidyverse", "dplyr", 
+          "survminer", "survival")
+suppressMessages(conflicted::conflict_scout())
+for (pkg in pkgs){
+  suppressPackageStartupMessages(library(pkg, character.only = T))
+}
+res_dir <- "./results/sup_figure12" %>% checkdir
+dat_dir <- "./data" %>% checkdir
+config_dir <- "./config" %>% checkdir
+
+#colors config
+config_fn <- glue::glue("{config_dir}/configs.yaml")
+ctype10_cols <- jhtools::show_me_the_colors(config_fn, "cell_type_new")
+meta_cols <- jhtools::show_me_the_colors(config_fn, "meta_color")
+meta_merge_cols <- jhtools::show_me_the_colors(config_fn, "meta_merge")
+
+#read in coldata
+coldat <- readr::read_csv(glue::glue("{dat_dir}/sce_coldata.csv"))
+sinfo <- readr::read_csv(glue::glue("{dat_dir}/metadata_sinfo.csv"))
+sample_chemo_type_list <- readr::read_rds(glue::glue("{dat_dir}/sample_chemo_type_list.rds"))
+metadata <- readr::read_rds(glue::glue("{dat_dir}/metadata.rds"))
+pos_cells10 <- readr::read_rds(glue::glue("{dat_dir}/pos_cell_list_10percent.rds"))
+assay_cc <- readr::read_rds(glue::glue("{dat_dir}/compcounts_censored_assay.rds"))
+```
+
+## sup_figure12a
+
+```{r sup_figure12a}
+#| echo: true
+#| warning: false
+#| message: false 
+#| label: sup_figure12a
+#| fig-width: 5
+#| fig-height: 5
+
+grid.draw.ggsurvplot <- function(x){
+  survminer:::print.ggsurvplot(x, newpage = FALSE)
+}
+
+
+coldat <- coldat %>%
+  dplyr::mutate(meta_merge = case_when(meta_cluster %notin% 
+                                         c("MC-tumor-frontline", "MC-stroma-macro", "MC-tumor-core") ~ "MC-others",
+                                       TRUE ~ meta_cluster))
+
+epi_total <- coldat %>%
+  dplyr::filter(sample_id %in% sample_chemo_type_list$no_chemo_all) %>%
+  dplyr::filter(cell_type_new %in% "Epithelial tumor cell") %>%
+  group_by(sample_id) %>% summarise(nt = n())
+
+epi_poscells <- "PD_L1_pos_Epithelial_tumor"
+
+epi_pos_os <- coldat %>%
+  dplyr::filter(sample_id %in% sample_chemo_type_list$no_chemo_all) %>%
+  dplyr::filter(cell_id %in% pos_cells10[[epi_poscells]]) %>%
+  group_by(sample_id) %>% summarise(nc = n()) %>%
+  left_join(epi_total, by = "sample_id") %>%
+  dplyr::mutate(prop = nc/nt) %>%
+  left_join(sinfo, by = "sample_id") %>%
+  dplyr::select(sample_id, prop, os_state, os_month) %>%
+  dplyr::mutate(group = case_when(prop >= quantile(prop, probs = 0.75) ~ "High PD-L1+ tumor (n = 32)",
+                                     prop < quantile(prop, probs = 0.75) ~ "Low PD-L1+ tumor (n = 104)")) %>%
+  drop_na(os_month)
+
+
+
+psurvx <- ggsurvplot(surv_fit(Surv(os_month, os_state) ~ group, data = epi_pos_os),
+                     palette = c("High PD-L1+ tumor (n = 32)" = "#BC3C29FF",
+                                 "Low PD-L1+ tumor (n = 104)" = "#0072B5FF"),
+                     size = 0.5, censor.size = 3, pval.size = 2,
+                     legend.labs = levels(droplevels(as.factor(unlist(epi_pos_os[, "group"])))),
+                     pval=T, risk.table = F, xlim = c(0,75))
+
+psurvx$plot <- psurvx$plot +
+  guides(color=guide_legend(title="Proportion of PD-L1+ tumor")) +
+  theme(axis.title.y = element_text(size = 6),
+        axis.text.y = element_text(size = 6),
+        axis.title.x = element_text(size = 6),
+        axis.text.x = element_text(size = 6),
+        legend.text = element_text(size = 6),
+        legend.title = element_text(size = 6),
+        axis.line.x = element_line(linewidth = 0.4),
+        axis.line.y = element_line(linewidth = 0.4),
+        legend.position = c(0.7,0.75),
+        legend.key.size = unit(0.1, 'cm'))
+
+ggsave(glue::glue("{res_dir}/sfig12a_PD_L1_tumor_prop_os_group43.pdf"),
+       plot = psurvx, width = 4, height = 4)
+
+psurvx
+
+```
+
+## sup_figure12b
+
+```{r sup_figure12b}
+#| echo: true
+#| warning: false
+#| message: false 
+#| label: sup_figure12b
+#| fig-width: 5
+#| fig-height: 4
+
+coldat <- coldat %>%
+  dplyr::mutate(cell_type11 = case_when(cell_type_new %in%
+                                          c("HLA-DR+CD163- mp", "HLA-DR+CD163+ mp", "HLA-DR-CD163+ mp") ~ "Other-mp",
+                                        cell_type_new %in% c("HLA-DR-CD163- mp") ~ "DN-mp",
+                                        TRUE ~ cell_type_new))
+
+df_closecell_distance_SM <- readr::read_rds(glue::glue("{dat_dir}/distance_rds/SM_list_closecell_dist_k1_Epithelial_tumor_to_Macrophage_other.rds")) %>% do.call("rbind", .) %>% as_tibble() %>% dplyr::mutate(meta_merge = "MC-stroma-macro")
+df_closecell_distance_TB <- readr::read_rds(glue::glue("{dat_dir}/distance_rds/TB_list_closecell_dist_k1_Epithelial_tumor_to_Macrophage_other.rds")) %>% do.call("rbind", .) %>% as_tibble() %>% dplyr::mutate(meta_merge = "MC-tumor-frontline")
+df_closecell_distance_othersnoBT <- readr::read_rds(glue::glue("{dat_dir}/distance_rds/OthersnoBT_list_closecell_dist_k1_Epithelial_tumor_to_Macrophage_other.rds")) %>% do.call("rbind", .) %>% as_tibble() %>% dplyr::mutate(meta_merge = "MC-others")
+
+df_closecell_distance <- rbind(df_closecell_distance_SM, df_closecell_distance_TB, df_closecell_distance_othersnoBT) %>% as_tibble()
+df_closecell_distance <- df_closecell_distance %>%
+  inner_join(coldat, by = c("from_cell" = "cell_id", "meta_merge" = "meta_merge")) %>%
+  dplyr::filter(sample_id %in% sample_chemo_type_list$no_chemo_all)
+
+df_closecell_distance$meta_merge <- factor(df_closecell_distance$meta_merge, levels = c("MC-tumor-frontline", "MC-stroma-macro", "MC-others") %>% rev())
+
+p <- ggdensity(df_closecell_distance, x = "distance",
+               add = "mean",
+               color = "meta_merge",
+               palette = meta_merge_cols) +
+  scale_x_continuous(limits=c(0,200), oob = scales::rescale_none) +
+  theme(axis.title.y = element_blank(),
+        axis.text.y = element_text(size = 6),
+        axis.title.x = element_text(size = 6),
+        axis.text.x = element_text(size = 6),
+        legend.position = "none")
+ggsave(glue::glue("{res_dir}/sfig12b_tumor_to_Macrophage_other_minDis_meta3_compare_density.pdf"), p, width = 3.5, height = 2.9)
+p
+
+```
+
+## sup_figure12c
+
+```{r sup_figure12c}
+#| echo: true
+#| warning: false
+#| message: false 
+#| label: sup_figure12c
+#| fig-width: 6
+#| fig-height: 3
+mac_colors <- c("DN-mp" = "#BC3C29FF", "Other-mp" = "#0072B5FF")
+
+meta_names <- c("TB_" = "MC-tumor-frontline", "SM_" = "MC-stroma-Mp", "OthersnoBT_" = "MC-others")
+
+pl <- list()
+for (r in c("SM_", "OthersnoBT_")) {
+  df_dnmac <- readr::read_rds(glue::glue("{dat_dir}/distance_rds/{r}list_closecell_dist_k1_Epithelial_tumor_to_Macrophage_HLADRn_CD163n.rds")) %>%
+    do.call("rbind", .) %>% as_tibble()
+  df_othmac <- readr::read_rds(glue::glue("{dat_dir}/distance_rds/{r}list_closecell_dist_k1_Epithelial_tumor_to_Macrophage_other.rds")) %>%
+    do.call("rbind", .) %>% as_tibble()
+  
+  df_mac <- rbind(df_dnmac, df_othmac) %>% as_tibble()
+  df_mac <- df_mac %>%
+    inner_join(coldat, by = c("to_cell" = "cell_id")) %>%
+    dplyr::filter(sample_id %in% c(sample_chemo_type_list[["chemo"]],
+                                   sample_chemo_type_list[["no_chemo_no_punc"]])) %>%
+    dplyr::mutate(chemo = case_when(sample_id %in% sample_chemo_type_list[["chemo"]] ~ "Surgery after chemo",
+                                    TRUE ~ "Upfront surgery"))
+  
+  #sample
+  df_mac_mean <- df_mac %>% group_by(sample_id, cell_type11, chemo) %>%
+    dplyr::summarise(mean_dis = mean(distance)) %>%
+    group_by(sample_id, chemo) %>% dplyr::mutate(nc = n()) %>%
+    ungroup() %>% dplyr::filter(nc > 1)
+  
+  df_mac_mean$cell_type11 <- factor(df_mac_mean$cell_type11, levels = c("DN-mp", "Other-mp"))
+  df_mac_mean$chemo <- factor(df_mac_mean$chemo, levels = c("Upfront surgery", "Surgery after chemo"))
+  
+  
+  stat_test <- df_mac_mean %>%
+    group_by(chemo) %>% rstatix::wilcox_test(mean_dis ~ cell_type11, paired = T)
+  stat_test <- stat_test %>% mutate(p.adj.signif = case_when(p >= 0.05 ~ "ns",
+                                                             p >= 0.01 & p < 0.05 ~ "*",
+                                                             p >= 0.001 & p < 0.01 ~ "**",
+                                                             p >= 0.0001 & p < 0.001 ~ "***",
+                                                             p < 0.0001 ~ "****",
+                                                             TRUE ~ "ns"))
+  stat_test <- stat_test %>%
+    rstatix::add_xy_position(x = "chemo", dodge = 0.9, fun = "median_iqr")
+  stat_test$y.position <- 12
+  
+  pl[[r]] <- ggplot(df_mac_mean,
+               aes(x = chemo, y = log2(mean_dis))) +
+    introdataviz::geom_split_violin(aes(x = chemo, y = log2(mean_dis), color = cell_type11),
+                                    trim = FALSE, linewidth = .3) +
+    geom_boxplot(aes(fill = cell_type11), width = .15, show.legend = FALSE,
+                 outlier.size = .2, linewidth = .2, color = "black") +
+    scale_fill_manual(values = mac_colors, name = glue::glue("{meta_names[r]}")) +
+    scale_colour_manual(values = mac_colors, name = glue::glue("{meta_names[r]}")) +
+    labs(y = "Log2(mean distance) of tumor to Mp") +
+    theme_bmbdc() +
+    theme(title = element_text(size = 6),
+          axis.ticks = element_line(colour = "black"),
+          axis.title.y = element_text(size = 6),
+          axis.text.y = element_text(size = 6, colour = "black"),
+          axis.title.x = element_blank(),
+          axis.text.x = element_text(size = 6, colour = "black"),
+          axis.line.x = element_line(linewidth = 0.4),
+          axis.line.y = element_line(linewidth = 0.4),
+          legend.position="top",
+          legend.text = element_text(size = 4),
+          legend.title = element_text(size = 4),
+          legend.key.size = unit(0.1, 'cm')) +
+    stat_pvalue_manual(stat_test, x = "chemo", tip.length = 0.01, hide.ns = F, label = "p.adj.signif", size = 1.5)
+  ggsave(glue::glue("{res_dir}/sfig12c_tumor_to_mac_dis_{r}cacb_persam_paired.pdf"), pl[[r]], width = 3, height = 3)
+}
+
+pl[[1]] | pl[[2]]
+
+```
+
+## sup_figure12d
+
+```{r sup_figure12d}
+#| echo: true
+#| warning: false
+#| message: false 
+#| label: sup_figure12d
+#| fig-width: 6
+#| fig-height: 3
+cld_cacb <- coldat %>% dplyr::filter(sample_id %in% c(sample_chemo_type_list[["chemo"]],
+                                                   sample_chemo_type_list[["no_chemo_no_punc"]])) %>%
+  dplyr::mutate(chemo = case_when(sample_id %in% sample_chemo_type_list[["chemo"]] ~ "Surgery after chemo",
+                                  TRUE ~ "Upfront surgery")) %>%
+  dplyr::select(sample_id, cell_id, cell_type11, chemo, meta_merge)
+
+#MC-tumor-frontline
+list_closecell_distance_macDN <- read_rds(glue::glue("{dat_dir}/distance_rds/TB_list_closecell_dist_k1_Epithelial_tumor_to_Macrophage_HLADRn_CD163n.rds"))
+list_closecell_distance_macOth <- read_rds(glue::glue("{dat_dir}/distance_rds/TB_list_closecell_dist_k1_Epithelial_tumor_to_Macrophage_other.rds"))
+df_closecell_distance <- do.call("rbind", c(list_closecell_distance_macDN, list_closecell_distance_macOth)) %>% as_tibble()
+TB_dist <- df_closecell_distance %>%
+  inner_join(cld_cacb, by = c("to_cell" = "cell_id"))
+
+#MC-stroma-macro
+list_closecell_distance_macDN <- read_rds(glue::glue("{dat_dir}/distance_rds/SM_list_closecell_dist_k1_Epithelial_tumor_to_Macrophage_HLADRn_CD163n.rds"))
+list_closecell_distance_macOth <- read_rds(glue::glue("{dat_dir}/distance_rds/SM_list_closecell_dist_k1_Epithelial_tumor_to_Macrophage_other.rds"))
+df_closecell_distance <- do.call("rbind", c(list_closecell_distance_macDN, list_closecell_distance_macOth)) %>% as_tibble()
+SM_dist <- df_closecell_distance %>%
+  inner_join(cld_cacb, by = c("to_cell" = "cell_id"))
+
+#MC-others
+list_closecell_distance_macDN <- read_rds(glue::glue("{dat_dir}/distance_rds/OthersnoBT_list_closecell_dist_k1_Epithelial_tumor_to_Macrophage_HLADRn_CD163n.rds"))
+list_closecell_distance_macOth <- read_rds(glue::glue("{dat_dir}/distance_rds/OthersnoBT_list_closecell_dist_k1_Epithelial_tumor_to_Macrophage_other.rds"))
+df_closecell_distance <- do.call("rbind", c(list_closecell_distance_macDN, list_closecell_distance_macOth)) %>% as_tibble()
+OthenoBT_dist <- df_closecell_distance %>%
+  inner_join(cld_cacb, by = c("to_cell" = "cell_id"))
+
+df_dist <- rbind(TB_dist, SM_dist, OthenoBT_dist) 
+
+#per sample
+df_dist_mean <- df_dist %>% group_by(sample_id, cell_type11, chemo, meta_merge) %>%
+  dplyr::summarise(dis_mean = mean(distance)) %>% ungroup()
+
+df_dist_mean$meta_merge <- factor(df_dist_mean$meta_merge, levels = c("MC-tumor-frontline", "MC-stroma-macro", "MC-others"))
+df_dist_mean$chemo <- factor(df_dist_mean$chemo, levels = c("Upfront surgery", "Surgery after chemo"))
+
+cols <- c("Upfront surgery" = "#BC3C29FF", "Surgery after chemo" = "#0072B5FF")
+
+pl <- list()
+for (i in c("DN-mp", "Other-mp")) {
+  dat <- df_dist_mean %>% dplyr::filter(cell_type11 %in% i)
+  stat_test <- dat %>%
+    group_by(meta_merge) %>% rstatix::wilcox_test(dis_mean ~ chemo, p.adjust.method = "none")
+  stat_test <- stat_test %>% mutate(p.adj.signif = case_when(p >= 0.05 ~ "ns",
+                                                             p >= 0.01 & p < 0.05 ~ "*",
+                                                             p >= 0.001 & p < 0.01 ~ "**",
+                                                             p >= 0.0001 & p < 0.001 ~ "***",
+                                                             p < 0.0001 ~ "****",
+                                                             TRUE ~ "ns"))
+  stat_test <- stat_test %>%
+    rstatix::add_xy_position(x = "meta_merge", dodge = 0.9, fun = "median_iqr")
+  stat_test$y.position <- 12
+  
+  pl[[i]] <- ggplot(dat, aes(x = meta_merge, y = log2(dis_mean))) +
+    introdataviz::geom_split_violin(aes(x = meta_merge, y = log2(dis_mean), color = chemo),
+                                    trim = FALSE, linewidth = .3) +
+    geom_boxplot(aes(fill = chemo), width = .2, show.legend = FALSE, linetype = 2,
+                 outlier.size = .2, linewidth = .2, color = "black") +
+    scale_fill_manual(values = cols) +
+    scale_colour_manual(values = cols) +
+    labs(y = glue::glue("Log2(mean distance) of tumor to {i}")) +
+    theme_bmbdc() +
+    theme(title = element_text(size = 6),
+          axis.ticks = element_line(colour = "black"),
+          axis.title.y = element_text(size = 6),
+          axis.text.y = element_text(size = 6, colour = "black"),
+          axis.title.x = element_blank(),
+          axis.text.x = element_text(size = 6, colour = "black", angle = 10),
+          axis.line.x = element_line(linewidth = 0.4),
+          axis.line.y = element_line(linewidth = 0.4),
+          legend.position="top",
+          legend.text = element_text(size = 4),
+          legend.title = element_blank(),
+          legend.key.size = unit(0.1, 'cm')) +
+    stat_pvalue_manual(stat_test, x = "meta_merge", tip.length = 0.01, hide.ns = F, label = "p.adj.signif", size = 1.5)
+  ggsave(glue::glue("{res_dir}/sfig12d_tumor_to_{i}_dis_3metas_chemo_persam.pdf"), pl[[i]], width = 3, height = 3)
+}
+
+pl[[1]] | pl[[2]]
+
+```
+
+## sup_figure12e
+
+```{r sup_figure12e}
+#| echo: true
+#| warning: false
+#| message: false 
+#| label: sup_figure12e
+#| fig-width: 9
+#| fig-height: 3
+
+#before chemo surgery sample
+cld_nochemo <- coldat %>% dplyr::filter(sample_id %in% sample_chemo_type_list[["no_chemo_no_punc"]])
+
+os_col <- c("near" = "#BC3C29FF", "far" = "#0072B5FF")
+meta_name <- c("TB_" = "MC-tumor-frontline", "SM_" = "MC-stroma-Mp", "OthersnoBT_" = "MC-others")
+
+pl <- list()
+for (r in c("TB_", "SM_", "OthersnoBT_")) {
+  list_closecell_distance <- read_rds(glue::glue("{dat_dir}/distance_rds/{r}list_closecell_dist_k1_Epithelial_tumor_to_Macrophage_HLADRn_CD163n.rds"))
+
+  dnmac_tumor_df <-  do.call("rbind", list_closecell_distance) %>% as_tibble() %>%
+    inner_join(cld_nochemo, by = c("from_cell" = "cell_id")) %>%
+    dplyr::select(from_cell, to_cell, distance, sample_id, sample_tiff_id)
+
+  mean_dis_df <- dnmac_tumor_df %>% group_by(sample_id) %>%
+    dplyr::summarise(mean_dis = mean(distance)) %>% ungroup()
+
+  mean_dis_df <- mean_dis_df %>% left_join(sinfo, by = "sample_id") %>%
+    dplyr::select(sample_id, mean_dis, pfs_state, pfs_month, os_state, os_month)
+
+  mean_dis_os <- mean_dis_df %>%
+    dplyr::mutate(mean_41 = case_when(mean_dis >= quantile(mean_dis, probs = 0.25) ~ "far", 
+                                      mean_dis < quantile(mean_dis, probs = 0.25) ~ "near"))
+
+  mean_dis_os_tmp <- mean_dis_os %>% dplyr::select(all_of(c("sample_id", "os_state", "os_month", "mean_41"))) %>% 
+    drop_na(os_month)
+
+  pl[[r]] <- ggsurvplot(surv_fit(Surv(os_month, os_state) ~ mean_41, data = mean_dis_os_tmp), palette = os_col,
+                         size = 0.5, censor.size = 3, pval.size = 2,
+                         legend.labs = levels(droplevels(as.factor(unlist(mean_dis_os_tmp[, "mean_41"])))),
+                         pval=T, risk.table = F, xlim = c(0,75))
+    psurvx$plot <- psurvx$plot +
+      guides(color=guide_legend(title=meta_name[r])) +
+      theme(axis.title.y = element_text(size = 6),
+            axis.text.y = element_text(size = 6),
+            axis.title.x = element_text(size = 6),
+            axis.text.x = element_text(size = 6),
+            legend.text = element_text(size = 6),
+            legend.title = element_text(size = 6),
+            legend.position = c(0.7,0.75),
+            legend.key.size = unit(0.1, 'cm'))
+    ggsave(glue::glue("{res_dir}/sfig12e_Tumor_to_DN_macrophage_dis_{r}mean_41_os.pdf"),
+           plot = pl[[r]], width = 4, height = 4)
+}
+pl[[1]]$plot | pl[[2]]$plot | pl[[3]]$plot
+
+
+```
+
+## sup_figure12f
+
+```{r sup_figure12f}
+#| echo: true
+#| warning: false
+#| message: false 
+#| label: sup_figure12f
+#| fig-width: 5
+#| fig-height: 5
+
+cld_tumor <- coldat %>% dplyr::filter(cell_type_new %in% c("Epithelial tumor cell") & meta_merge %notin% "MC-tumor-core")
+
+comcc_t <- as.data.frame(t(assay_cc))
+comcc_t$cell_id <- rownames(comcc_t)
+cld_tumor <- left_join(cld_tumor, comcc_t, by = "cell_id")
+
+chemo_colors <- c("Upfront surgery" = "#BC3C29FF", "Upfront after chemo" = "#0072B5FF")
+
+i = "PD_L1"
+
+#before chemo surgery only
+cld_tumor_chemo <- cld_tumor %>% dplyr::filter(sample_id %in% c(sample_chemo_type_list[["chemo"]],
+                                                                sample_chemo_type_list[["no_chemo_no_punc"]])) %>%
+  dplyr::mutate(chemo = case_when(sample_id %in% sample_chemo_type_list[["chemo"]] ~ "Upfront after chemo",
+                                  TRUE ~ "Upfront surgery")) %>% distinct() %>%
+  dplyr::select(sample_id, cell_id, cell_type_new, meta_merge, chemo, all_of(i))
+
+cld_tumor_ins_meta <- cld_tumor_chemo %>%
+  group_by(sample_id, meta_merge, chemo) %>% dplyr::summarise(mean_ins = mean(.data[[i]])) %>%
+  ungroup() 
+
+cld_tumor_ins_meta$chemo <- factor(cld_tumor_ins_meta$chemo, levels = c("Upfront surgery", "Upfront after chemo"))
+cld_tumor_ins_meta$meta_merge <- factor(cld_tumor_ins_meta$meta_merge, levels = c("MC-tumor-frontline", "MC-stroma-macro", "MC-others"))
+
+stat_test <- cld_tumor_ins_meta %>%
+  group_by(meta_merge) %>% rstatix::wilcox_test(mean_ins ~ chemo, paired = F)
+stat_test <- stat_test %>% mutate(p.adj.signif = case_when(p >= 0.05 ~ "ns",
+                                                           p >= 0.01 & p < 0.05 ~ "*",
+                                                           p >= 0.001 & p < 0.01 ~ "**",
+                                                           p >= 0.0001 & p < 0.001 ~ "***",
+                                                           p < 0.0001 ~ "****",
+                                                           TRUE ~ "ns"))
+stat_test <- stat_test %>%
+  rstatix::add_xy_position(x = "chemo", dodge = 0.9, fun = "median_iqr")
+stat_test$y.position <- 1.1
+
+p <- ggplot(cld_tumor_ins_meta,
+            aes(x = meta_merge, y = mean_ins)) +
+  introdataviz::geom_split_violin(aes(x = meta_merge, y = mean_ins, colour = chemo), #fill = chemo,
+                                  trim = F, linewidth = .3) +
+  geom_boxplot(aes(fill = chemo), width = .2, show.legend = FALSE,
+               outlier.size = .01, linewidth = .2, color = "black") +
+  # stat_summary(fun.data = "mean_se", geom = "pointrange", show.legend = F,
+  #              position = position_dodge(.12), size = .025, color = "black") +
+  scale_fill_manual(values = chemo_colors) +
+  scale_colour_manual(values = chemo_colors) +
+  labs(y = glue::glue("Mean intensity of {i}")) +
+  stat_pvalue_manual(stat_test, x = "meta_merge", tip.length = 0.01, hide.ns = F, label = "p.adj.signif", size = 1.5) +
+  theme_bmbdc() +
+  theme(title = element_text(size = 6),
+        axis.ticks = element_line(colour = "black"),
+        axis.title.y = element_text(size = 6),
+        axis.text.y = element_text(size = 6, colour = "black"),
+        axis.title.x = element_blank(),
+        axis.text.x = element_text(size = 6, colour = "black", angle = 10),
+        axis.line.x = element_line(linewidth = 0.4),
+        axis.line.y = element_line(linewidth = 0.4),
+        legend.position="top",
+        legend.text = element_text(size = 4),
+        legend.title = element_text(size = 4),
+        legend.key.size = unit(0.1, 'cm'))
+ggsave(glue::glue("{res_dir}/sfig12f_tumor_{i}_intensity_meta3_chemo_surgery.pdf"), p, width = 3, height = 3)
+p
+
+```

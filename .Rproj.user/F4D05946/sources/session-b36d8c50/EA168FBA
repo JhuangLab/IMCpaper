@@ -1,0 +1,31 @@
+{
+    "id": "EA168FBA",
+    "path": "~/projects/hyperion/code/code_for_quarto_book/hyperion_quarto_book/sup_figure9.qmd",
+    "project_path": "sup_figure9.qmd",
+    "type": "quarto_markdown",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1742558121994.0,
+    "source_on_save": false,
+    "relative_order": 9,
+    "properties": {
+        "rmdVisualMode": "false",
+        "rmdVisualWrapConfigured": "true",
+        "source_window_id": "",
+        "Source": "Source",
+        "docOutlineVisible": "1",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "2:0",
+        "cursorPosition": "0,2",
+        "scrollLine": "0"
+    },
+    "folds": "37|16|96|0|\n97|16|135|0|\n136|15|187|0|\n188|15|225|0|\n226|15|292|0|\n293|15|366|0|\n",
+    "lastKnownWriteTime": 1742612609,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1742618607643,
+    "read_only": false,
+    "read_only_alternatives": []
+}

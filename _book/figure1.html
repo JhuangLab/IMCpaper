@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.3">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>figure1 – A clinically relevant spatial single-cell landscape of pancreatic cancer</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./figure2.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-81b5c3e63835cfde897ecd3d35a35a41.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./figure1.html"><span class="chapter-title">figure1</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">A clinically relevant spatial single-cell landscape of pancreatic cancer</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./figure1.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">figure1</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./figure2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">figure2</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./figure3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">figure3</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./figure4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">figure4</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./figure5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">figure5</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./figure6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">figure6</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./figure7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">figure7</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sup_figure7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">sup_figure7</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sup_figure8.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">sup_figure8</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sup_figure9.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">sup_figure9</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sup_figure10.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">sup_figure10</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sup_figure11.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">sup_figure11</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sup_figure12.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">sup_figure12</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sup_figure13.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">sup_figure13</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sup_figure14.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">sup_figure14</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#figure1a" id="toc-figure1a" class="nav-link active" data-scroll-target="#figure1a">figure1a</a></li>
+  <li><a href="#figure1d" id="toc-figure1d" class="nav-link" data-scroll-target="#figure1d">figure1d</a></li>
+  <li><a href="#figure1d_sup2" id="toc-figure1d_sup2" class="nav-link" data-scroll-target="#figure1d_sup2">figure1d_sup2</a></li>
+  <li><a href="#figure1e" id="toc-figure1e" class="nav-link" data-scroll-target="#figure1e">figure1e</a></li>
+  <li><a href="#figure1f" id="toc-figure1f" class="nav-link" data-scroll-target="#figure1f">figure1f</a></li>
+  <li><a href="#figure1sup4" id="toc-figure1sup4" class="nav-link" data-scroll-target="#figure1sup4">figure1sup4</a></li>
+  <li><a href="#figure1sup5a" id="toc-figure1sup5a" class="nav-link" data-scroll-target="#figure1sup5a">figure1sup5a</a></li>
+  <li><a href="#figure1sup5b" id="toc-figure1sup5b" class="nav-link" data-scroll-target="#figure1sup5b">figure1sup5b</a></li>
+  <li><a href="#figure1sup5c" id="toc-figure1sup5c" class="nav-link" data-scroll-target="#figure1sup5c">figure1sup5c</a></li>
+  <li><a href="#figure1sup5d" id="toc-figure1sup5d" class="nav-link" data-scroll-target="#figure1sup5d">figure1sup5d</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">figure1</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pkgs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"SingleCellExperiment"</span>, <span class="st">"ggthemes"</span>, <span class="st">"ggpubr"</span>, <span class="st">"vroom"</span>, <span class="st">"jhtools"</span>, </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>          <span class="st">"patchwork"</span>, <span class="st">"cowplot"</span>, <span class="st">"tidyverse"</span>, <span class="st">"dplyr"</span>, <span class="st">"ComplexHeatmap"</span>, </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>          <span class="st">"viridis"</span>, <span class="st">"factoextra"</span>, <span class="st">"pheatmap"</span>, <span class="st">"RColorBrewer"</span>, <span class="st">"circlize"</span>, </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>          <span class="st">"jhuanglabHyperion"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(conflicted<span class="sc">::</span><span class="fu">conflict_scout</span>())</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (pkg <span class="cf">in</span> pkgs){</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(pkg, <span class="at">character.only =</span> T))</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>res_dir <span class="ot">&lt;-</span> <span class="st">"./results/figure1"</span> <span class="sc">%&gt;%</span> checkdir</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>dat_dir <span class="ot">&lt;-</span> <span class="st">"./data"</span> <span class="sc">%&gt;%</span> checkdir</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>config_dir <span class="ot">&lt;-</span> <span class="st">"./config"</span> <span class="sc">%&gt;%</span> checkdir</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#colors config</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>config_fn <span class="ot">&lt;-</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{config_dir}/configs.yaml"</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>stype3_cols <span class="ot">&lt;-</span> jhtools<span class="sc">::</span><span class="fu">show_me_the_colors</span>(config_fn, <span class="st">"stype3"</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>ctype10_cols <span class="ot">&lt;-</span> jhtools<span class="sc">::</span><span class="fu">show_me_the_colors</span>(config_fn, <span class="st">"cell_type_new"</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">#read in data</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>coldat <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{dat_dir}/sce_coldata.csv"</span>))</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>sinfo <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{dat_dir}/metadata_sinfo.csv"</span>))</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>metadata <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_rds</span>(glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{dat_dir}/metadata.rds"</span>))</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>seu_sub <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_rds</span>(glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{dat_dir}/sce_sub_fig1f.rds"</span>))</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co">#theme</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>plot.theme <span class="ot">&lt;-</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(), </span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>axistheme1 <span class="ot">&lt;-</span> <span class="fu">theme</span>(<span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">7</span>),</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>                    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">7</span>),</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>                    <span class="at">axis.title.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>                    <span class="at">axis.ticks.x =</span>  <span class="fu">element_blank</span>(),</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>                    <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>axistheme2 <span class="ot">&lt;-</span> <span class="fu">theme</span>(<span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>),</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>                    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">6</span>),</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>                    <span class="at">axis.title.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>                    <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>                    <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">linewidth =</span> .<span class="dv">4</span>, <span class="at">colour =</span> <span class="st">"black"</span>),</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>                    <span class="at">axis.ticks.y =</span> <span class="fu">element_line</span>(<span class="at">linewidth =</span> .<span class="dv">4</span>, <span class="at">colour =</span> <span class="st">"black"</span>),</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>                    <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>                    <span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="figure1a" class="level2">
+<h2 class="anchored" data-anchor-id="figure1a">figure1a</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sp_info <span class="ot">&lt;-</span> coldat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(sample_id, stype3) <span class="sc">%&gt;%</span> <span class="fu">distinct</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">remove_rownames</span>() <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">group =</span> <span class="fu">ifelse</span>(stype3 <span class="sc">!=</span> <span class="st">"Paracancerous"</span> <span class="sc">&amp;</span> </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                                                  stype3 <span class="sc">!=</span> <span class="st">"Normal"</span>, <span class="st">"Tumor"</span>, stype3))</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>sp_info<span class="sc">$</span>group <span class="ot">&lt;-</span> <span class="fu">factor</span>(sp_info<span class="sc">$</span>group, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Tumor"</span>, <span class="st">"Paracancerous"</span>, <span class="st">"Normal"</span>))</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>sp_info<span class="sc">$</span>stype3 <span class="ot">&lt;-</span> <span class="fu">factor</span>(sp_info<span class="sc">$</span>stype3, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Punc_liver"</span>, <span class="st">"Punc_pancreas"</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                                                    <span class="st">"Surgery_after_chemo"</span>, <span class="st">"Surgery_without_chemo"</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>                                                    <span class="st">"Paracancerous"</span>, <span class="st">"Normal"</span>))</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># plot</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(sp_info, <span class="fu">aes</span>(<span class="at">x =</span> group, <span class="at">fill =</span> stype3)) <span class="sc">+</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"stack"</span>, <span class="at">width =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> stype3_cols) <span class="sc">+</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">pretty_breaks</span>(<span class="at">n =</span> <span class="dv">5</span>)) <span class="sc">+</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">60</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> ..count..), <span class="at">stat =</span> <span class="st">"count"</span>, <span class="at">position =</span> <span class="fu">position_stack</span>(<span class="at">vjust =</span> <span class="fl">0.5</span>))</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{res_dir}/fig1a_sample_info.pdf"</span>), <span class="at">width =</span> <span class="dv">3</span>, <span class="at">height =</span> <span class="dv">6</span>)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="figure1_files/figure-html/figure1a-1.png" class="img-fluid figure-img" width="288"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="figure1d" class="level2">
+<h2 class="anchored" data-anchor-id="figure1d">figure1d</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>meta_all <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{dat_dir}/metadata_sinfo.csv"</span>))</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>c_mat_lst <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_rds</span>(glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{dat_dir}/heatmap_1d_mat_lst.rds"</span>))</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>c_mat <span class="ot">&lt;-</span> c_mat_lst[[<span class="dv">1</span>]]</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>cluster_prop <span class="ot">&lt;-</span> c_mat_lst[[<span class="dv">2</span>]]</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># lineage markers</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>anno_marks <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"a_smooth"</span>, <span class="st">"CD14"</span>, <span class="st">"CD33"</span>, <span class="st">"CD16"</span>, <span class="st">"CD163"</span>, <span class="st">"Pan_Keratin"</span>, <span class="st">"CD11b"</span>,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                <span class="st">"CD31"</span>, <span class="st">"CD11c"</span>, <span class="st">"FoxP3"</span>, <span class="st">"CD4"</span>, <span class="st">"E_Cadherin"</span>, <span class="st">"CD68"</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>                <span class="st">"CD20"</span>, <span class="st">"CD8a"</span>, <span class="st">"Collagen1"</span>, <span class="st">"CD3"</span>, <span class="st">"HLA_DR"</span>,<span class="st">"CD25"</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Vimentin"</span>, <span class="st">"CCR6"</span>, <span class="st">"B7_H4"</span>, <span class="st">"Ki67"</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># cell grouping and ordering data for heatmap</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># the ordering should NOT be changed to avoid bugs of ComplexHeatmap package!!</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>epiendo_cells <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Epithelial tumor cell"</span>, <span class="st">"Normal epithelial cell"</span>, <span class="st">"Endothelial cell"</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>immu_stroma_cells <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"DC"</span>, <span class="st">"MDSC"</span>, <span class="st">"Monocyte"</span>, <span class="st">"B cell"</span>, <span class="st">"CD8+ T cell"</span>, <span class="st">"CD4+ T cell"</span>,</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"HLA-DR-CD163- mp"</span>, <span class="st">"HLA-DR-CD163+ mp"</span>, <span class="st">"HLA-DR+CD163- mp"</span>,</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"HLA-DR+CD163+ mp"</span>, <span class="st">"HLA-DR-CD163- MMT"</span>, <span class="st">"HLA-DR+CD163- MMT"</span>, </span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"HLA-DR+CD163+ MMT"</span>, <span class="st">"PSC"</span>, <span class="st">"myoCAF"</span>, <span class="st">"Col1+ CAF"</span>)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>other_cells <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"CCR6+ cell"</span>, <span class="st">"B7-H4+ cell"</span>, <span class="st">"Ki67+ cell"</span>, <span class="st">"Vim+ cell"</span>, <span class="st">"Unknown"</span>)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>grouping_celltype <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">cell_type_new =</span> <span class="fu">c</span>(epiendo_cells, immu_stroma_cells, other_cells),</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>                                <span class="at">meta_celltype =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">"Epi-endo"</span>, <span class="dv">3</span>), <span class="fu">rep</span>(<span class="st">"Immune-stroma"</span>, <span class="dv">16</span>), <span class="fu">rep</span>(<span class="st">"Others"</span>, <span class="dv">5</span>)))</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>heatmap_dat <span class="ot">&lt;-</span> c_mat[grouping_celltype<span class="sc">$</span>cell_type_new, anno_marks]</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>split_row <span class="ot">&lt;-</span> grouping_celltype<span class="sc">$</span>meta_celltype</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>split_row <span class="ot">&lt;-</span> <span class="fu">factor</span>(split_row, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Epi-endo"</span>, <span class="st">"Immune-stroma"</span>, <span class="st">"Others"</span>))</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>meta_colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#B61932"</span>, <span class="st">"#568AC2"</span>, <span class="st">"#BEA278"</span>)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>labels_meta <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Epi-endo"</span>, <span class="st">"Immune-stroma"</span>, <span class="st">"Others"</span>)</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>labels_meta2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Epithelial &amp; endothelial Cells"</span>, <span class="st">"Immune &amp; stroma Cells"</span>, <span class="st">"Other Cells"</span>)</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>block_anno <span class="ot">=</span> <span class="fu">rowAnnotation</span>(<span class="at">Type =</span> <span class="fu">anno_block</span>(<span class="at">gp =</span> <span class="fu">gpar</span>(<span class="at">fill =</span> meta_colors),</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>                                             <span class="at">labels =</span> labels_meta,</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>                                             <span class="at">labels_gp =</span> <span class="fu">gpar</span>(<span class="at">col =</span> <span class="st">"white"</span>, <span class="at">fontsize =</span> <span class="dv">10</span>)))</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>col_fun <span class="ot">=</span> circlize<span class="sc">::</span><span class="fu">colorRamp2</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="st">"#5658A5"</span>, <span class="st">"#8BCDA3"</span>, <span class="st">"#FBF4AA"</span>, <span class="st">"#F16943"</span>, <span class="st">"#9D1A44"</span>))</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>prop_data <span class="ot">&lt;-</span> cluster_prop[ ,<span class="dv">3</span>]</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(prop_data) <span class="ot">&lt;-</span> cluster_prop[ ,<span class="dv">1</span>]</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a><span class="co"># bar annotation</span></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>meta_all1 <span class="ot">&lt;-</span> meta_all <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">base_excision_eval =</span> <span class="fu">case_when</span>(</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">nchar</span>(base_excision_eval) <span class="sc">==</span> <span class="dv">4</span> <span class="sc">~</span> <span class="st">"BRPC_LAPC"</span>,</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>  <span class="cn">TRUE</span> <span class="sc">~</span> base_excision_eval))</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>coldat <span class="ot">&lt;-</span> <span class="fu">left_join</span>(coldat, meta_all1[, <span class="fu">c</span>(<span class="st">"sample_id"</span>, <span class="st">"base_excision_eval"</span>)])</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>group_dat <span class="ot">&lt;-</span> coldat <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(cell_type_new) <span class="sc">%&gt;%</span></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">allcount =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cell_type_new, base_excision_eval, allcount) <span class="sc">%&gt;%</span></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>() <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">frac =</span> count <span class="sc">/</span> allcount)</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>group_dat<span class="sc">$</span>cell_type_order <span class="ot">&lt;-</span> <span class="fu">factor</span>(group_dat<span class="sc">$</span>cell_type_new,</span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">levels =</span> <span class="fu">rev</span>(grouping_celltype<span class="sc">$</span>cell_type_new))</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>prop_data <span class="ot">&lt;-</span> prop_data[<span class="fu">match</span>(<span class="fu">rownames</span>(heatmap_dat), <span class="fu">names</span>(prop_data))]</span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>cell_amount_anno <span class="ot">=</span> ComplexHeatmap<span class="sc">::</span><span class="fu">rowAnnotation</span>(</span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>  <span class="at">frac =</span> <span class="fu">anno_barplot</span>(prop_data,</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>                      <span class="at">gp =</span> <span class="fu">gpar</span>(<span class="at">fill =</span> ctype10_cols[<span class="fu">match</span>(<span class="fu">rownames</span>(heatmap_dat), <span class="fu">names</span>(ctype10_cols))])))</span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>text_color <span class="ot">&lt;-</span> scales<span class="sc">::</span><span class="fu">muted</span>(ctype10_cols[<span class="fu">match</span>(<span class="fu">rev</span>(grouping_celltype<span class="sc">$</span>cell_type_new), <span class="fu">names</span>(ctype10_cols))], <span class="at">l =</span> <span class="dv">50</span>)</span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a><span class="co"># bubble plot</span></span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>group_dat<span class="sc">$</span>base_order <span class="ot">&lt;-</span> <span class="fu">factor</span>(group_dat<span class="sc">$</span>base_excision_eval,</span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>                               <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"RPC"</span>, <span class="st">"BRPC_LAPC"</span>, <span class="st">"MPC"</span>))</span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>pcirc <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(group_dat, <span class="fu">aes</span>(<span class="at">y =</span> cell_type_order, <span class="at">x =</span> base_order)) <span class="sc">+</span></span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> cell_type_order, <span class="at">alpha =</span> frac, <span class="at">size =</span> count)) <span class="sc">+</span></span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> ctype10_cols) <span class="sc">+</span></span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">15</span>), <span class="at">name =</span> <span class="st">"Fraction of clinical in celltype group"</span>) <span class="sc">+</span></span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">color =</span> text_color),</span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>    <span class="co"># not officially supported but works anyway, one may also seek for ggtext solution</span></span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">"black"</span>),</span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.y =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expand_limits</span>(<span class="at">y =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="fu">length</span>(<span class="fu">levels</span>(group_dat<span class="sc">$</span>cell_type_order)) <span class="sc">+</span> <span class="fl">0.8</span>))</span>
+<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a><span class="co"># main heatmap</span></span>
+<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a>ht_main <span class="ot">&lt;-</span> <span class="fu">Heatmap</span>(heatmap_dat, <span class="at">name =</span> <span class="st">"matrix"</span>, <span class="at">heatmap_legend_param =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"exp"</span>),</span>
+<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a>                   <span class="at">cluster_row_slices =</span> F, <span class="at">col =</span> col_fun, <span class="at">row_km =</span> <span class="dv">0</span>,</span>
+<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a>                   <span class="at">cluster_rows =</span> F, <span class="at">show_heatmap_legend =</span> F, <span class="at">left_annotation =</span> block_anno,</span>
+<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a>                   <span class="at">split =</span> split_row, <span class="at">show_row_names =</span> F, <span class="at">row_title =</span> <span class="cn">NULL</span>,</span>
+<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a>                   <span class="at">show_row_dend =</span> F, <span class="at">show_column_dend =</span> F)</span>
+<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a>ht <span class="ot">&lt;-</span> <span class="fu">attach_annotation</span>(ht_main, cell_amount_anno, <span class="at">side =</span> <span class="st">"right"</span>)</span>
+<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a>ht <span class="ot">&lt;-</span> <span class="fu">draw</span>(ht)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="figure1_files/figure-html/figure1d-1.png" class="img-fluid figure-img" width="1248"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>grob <span class="ot">&lt;-</span> <span class="fu">grid.grabExpr</span>(<span class="fu">draw</span>(ht))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># legends</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>heat_legend <span class="ot">&lt;-</span> <span class="fu">Legend</span>(<span class="at">title =</span> <span class="st">"Intensity"</span>, <span class="at">at =</span> <span class="sc">-</span><span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">col_fun =</span> col_fun)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>meta_legend <span class="ot">&lt;-</span> <span class="fu">Legend</span>(<span class="at">labels =</span> labels_meta2, <span class="at">title =</span> <span class="st">"Cell Categories"</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>                      <span class="at">legend_gp =</span> <span class="fu">gpar</span>(<span class="at">fill =</span> meta_colors))</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>merged_legends <span class="ot">&lt;-</span> <span class="fu">packLegend</span>(heat_legend, meta_legend)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># merged plot</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggdraw</span>() <span class="sc">+</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">draw_plot</span>(pcirc, <span class="dv">0</span>, <span class="fl">0.033</span>, <span class="fl">0.27</span>, <span class="fl">0.95</span>) <span class="sc">+</span>   <span class="do">## x, y, width, height</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">draw_plot</span>(grob, <span class="fl">0.275</span>, <span class="fl">0.001</span>, <span class="fl">0.52</span>, <span class="fl">0.98</span>) <span class="sc">+</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">draw_plot</span>(<span class="fu">grid.grabExpr</span>(<span class="fu">draw</span>(merged_legends)), <span class="fl">0.84</span>, <span class="fl">0.4</span>, <span class="fl">0.06</span>, <span class="fl">0.08</span>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{res_dir}/fig1d_heatmap_main_anno.pdf"</span>), p, <span class="at">height =</span> <span class="dv">7</span>, <span class="at">width =</span> <span class="dv">13</span>)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="figure1_files/figure-html/figure1d-2.png" class="img-fluid figure-img" width="1248"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="figure1d_sup2" class="level2">
+<h2 class="anchored" data-anchor-id="figure1d_sup2">figure1d_sup2</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>func_marks <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"CD45"</span>, <span class="st">"CD45RO"</span>, <span class="st">"EGFR"</span>, <span class="st">"PD_L1"</span>, <span class="st">"LAG_3"</span>, <span class="st">"Vista"</span>, <span class="st">"CCR6"</span>, <span class="st">"Arginase_1"</span>, <span class="st">"PD1"</span>,</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Vimentin"</span>, <span class="st">"B7_H4"</span>, <span class="st">"Granzyme_B"</span>, <span class="st">"Ki67"</span>, <span class="st">"Caspase3"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>heatmap_dat <span class="ot">&lt;-</span> c_mat[grouping_celltype<span class="sc">$</span>cell_type_new, func_marks]</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(heatmap_dat) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"CD45"</span>, <span class="st">"CD45RO"</span>, <span class="st">"EGFR"</span>, <span class="st">"PD-L1"</span>, <span class="st">"LAG3"</span>, <span class="st">"VISTA"</span>, <span class="st">"CCR6"</span>, <span class="st">"Arg-1"</span>, <span class="st">"PD-1"</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"Vim"</span>, <span class="st">"B7-H4"</span>, <span class="st">"GZMB"</span>, <span class="st">"Ki-67"</span>, <span class="st">"Casp-3"</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>ht_func <span class="ot">&lt;-</span> <span class="fu">Heatmap</span>(heatmap_dat, <span class="at">name =</span> <span class="st">"matrix"</span>, <span class="at">heatmap_legend_param =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"exp"</span>),</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                   <span class="at">cluster_row_slices =</span> F, <span class="at">col =</span> col_fun, <span class="at">row_km =</span> <span class="dv">0</span>,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>                   <span class="at">cluster_rows =</span> F, <span class="at">show_heatmap_legend =</span> T, <span class="co">#left_annotation = block_anno,</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>                   <span class="at">show_row_names =</span> T,<span class="co">#split = split_row, row_title = NULL,</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>                   <span class="at">show_row_dend =</span> F, <span class="at">show_column_dend =</span> F)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{res_dir}/fig1dsup2_heatmap_sup_functional.pdf"</span>), <span class="at">height =</span> <span class="dv">6</span>, <span class="at">width =</span> <span class="dv">5</span>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(ht_func)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">dev.off</span>()</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>ht_func</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="figure1_files/figure-html/figure1d_sup2-1.png" class="img-fluid figure-img" width="384"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="figure1e" class="level2">
+<h2 class="anchored" data-anchor-id="figure1e">figure1e</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>celltypes <span class="ot">&lt;-</span> <span class="fu">unique</span>(coldat<span class="sc">$</span>cell_type_new)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>cld <span class="ot">&lt;-</span> coldat <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(stype3) <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">n_cell =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cell_type_new, <span class="at">.add =</span> T) <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">cell_ratio =</span> <span class="fu">n</span>()<span class="sc">/</span>n_cell)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> cld <span class="sc">%&gt;%</span> <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(stype3, cell_type_new, cell_ratio) <span class="sc">%&gt;%</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">distinct</span>() <span class="sc">%&gt;%</span> <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> cell_type_new, <span class="at">values_from =</span> cell_ratio) <span class="sc">%&gt;%</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), replace_na, <span class="dv">0</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(celltypes, <span class="at">names_to =</span> <span class="st">"cell_type"</span>, <span class="at">values_to =</span> <span class="st">"ratio"</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>stype3<span class="ot">&lt;-</span> <span class="fu">factor</span>(df<span class="sc">$</span>stype3, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Surgery_without_chemo"</span>, <span class="st">"Surgery_after_chemo"</span>, <span class="st">"Punc_pancreas"</span>, <span class="st">"Punc_liver"</span>, <span class="st">"Paracancerous"</span>, <span class="st">"Normal"</span>))</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>stack <span class="ot">&lt;-</span> <span class="cf">function</span> (<span class="at">df =</span> df) {</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(stype3, ratio<span class="sc">*</span><span class="dv">100</span>, <span class="at">fill =</span> cell_type)) <span class="sc">+</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">'identity'</span>, <span class="at">position =</span> <span class="fu">position_stack</span>(), <span class="at">width =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">''</span>, <span class="at">y =</span> <span class="st">'Cell percentage'</span>) <span class="sc">+</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> ctype10_cols) <span class="sc">+</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">13</span>),</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">60</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.title.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.ticks.x =</span>  <span class="fu">element_blank</span>(),</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"black"</span>),</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.ticks =</span> <span class="fu">element_line</span>(<span class="at">size =</span> <span class="fl">0.25</span>),</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>          <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>),</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>          <span class="at">strip.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">color =</span> <span class="cn">NA</span>),</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>          <span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>))</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(p)</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">stack</span>(<span class="at">df =</span> df)</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{res_dir}/fig1e_stype2_stackplot.pdf"</span>), p, <span class="at">width =</span> <span class="dv">2</span>, <span class="at">height =</span> <span class="dv">3</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="figure1_files/figure-html/figure1e-1.png" class="img-fluid figure-img" width="384"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="figure1f" class="level2">
+<h2 class="anchored" data-anchor-id="figure1f">figure1f</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">plot2d</span>(seu_sub, <span class="at">color.by =</span> <span class="st">"stype3"</span>, <span class="at">show.cluser.id =</span> F, <span class="at">size =</span> <span class="fl">0.01</span>,</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">item.use =</span> <span class="fu">c</span>(<span class="st">"t_sne1"</span>, <span class="st">"t_sne2"</span>)) <span class="sc">+</span> <span class="fu">scale_color_manual</span>(<span class="at">values =</span> stype3_cols) <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">colour =</span> <span class="fu">guide_legend</span>(<span class="at">override.aes =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">2</span>)))</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{res_dir}/fig1f_tsne_stype3_300000.png"</span>), p, <span class="at">dpi =</span> <span class="dv">300</span>, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">5</span>)       </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="figure1_files/figure-html/figure1f-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="figure1sup4" class="level2">
+<h2 class="anchored" data-anchor-id="figure1sup4">figure1sup4</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{dat_dir}/cell_score_stat.csv"</span>))</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>my_comparisons <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="st">"Normal"</span>,<span class="st">"Paracancerous"</span>), <span class="fu">c</span>(<span class="st">"Normal"</span>, <span class="st">"Surgery_without_chemo"</span>),</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">c</span>(<span class="st">"Paracancerous"</span>, <span class="st">"Surgery_without_chemo"</span>),</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">c</span>(<span class="st">"Surgery_without_chemo"</span>, <span class="st">"Surgery_after_chemo"</span>),</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">c</span>(<span class="st">"Punc_pancreas"</span>, <span class="st">"Punc_liver"</span>))</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>stype3 <span class="ot">&lt;-</span> <span class="fu">factor</span>(df<span class="sc">$</span>stype3, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Surgery_without_chemo"</span>, <span class="st">"Surgery_after_chemo"</span>, <span class="st">"Punc_pancreas"</span>,<span class="st">"Punc_liver"</span>, <span class="st">"Paracancerous"</span>, <span class="st">"Normal"</span>))</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> (<span class="fu">ggplot</span>(df, <span class="fu">aes_string</span>(<span class="at">x =</span> <span class="st">"stype3"</span>, <span class="at">y =</span> <span class="st">"cell_density"</span>)) <span class="sc">+</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>         <span class="fu">geom_boxplot</span>(<span class="at">outlier.shape=</span> <span class="cn">NA</span>, <span class="at">lwd =</span> <span class="fl">0.2</span>, <span class="at">color =</span> <span class="st">"#000000"</span>, <span class="at">fill =</span> stype3_cols) <span class="sc">+</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>         <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="fl">1.9</span>) <span class="sc">+</span> </span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>         plot.theme <span class="sc">+</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>         <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>         axistheme1<span class="sc">+</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>         <span class="fu">stat_compare_means</span>(<span class="at">method =</span> <span class="st">"wilcox.test"</span>,</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>                            <span class="at">comparisons =</span> my_comparisons,</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>                            <span class="at">hide.ns =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>                            <span class="at">bracket.size =</span> <span class="fl">0.2</span>,</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>                            <span class="at">vjust =</span> <span class="fl">0.8</span>,</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>                            <span class="fu">aes</span>(<span class="at">label =</span> ..p.signif..)))</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> (<span class="fu">ggplot</span>(df, <span class="fu">aes_string</span>(<span class="at">x =</span> <span class="st">"stype3"</span>, <span class="at">y =</span> <span class="st">"score_col"</span>)) <span class="sc">+</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>         <span class="fu">geom_boxplot</span>(<span class="at">outlier.shape=</span> <span class="cn">NA</span>, <span class="at">lwd =</span> <span class="fl">0.2</span>, <span class="at">color =</span> <span class="st">"#000000"</span>, <span class="at">fill =</span> stype3_cols) <span class="sc">+</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>         <span class="fu">ylim</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">8</span>) <span class="sc">+</span> </span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>         plot.theme <span class="sc">+</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>         <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>         axistheme1<span class="sc">+</span></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>         <span class="fu">stat_compare_means</span>(<span class="at">method =</span> <span class="st">"wilcox.test"</span>,</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>                            <span class="at">comparisons =</span> my_comparisons,</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>                            <span class="at">hide.ns =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>                            <span class="at">bracket.size =</span> <span class="fl">0.2</span>,</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>                            <span class="at">vjust =</span> <span class="fl">0.8</span>,</span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>                            <span class="fu">aes</span>(<span class="at">label =</span> ..p.signif..)))</span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> (<span class="fu">ggplot</span>(df, <span class="fu">aes_string</span>(<span class="at">x =</span> <span class="st">"stype3"</span>, <span class="at">y =</span> <span class="st">"DispersionScore"</span>)) <span class="sc">+</span></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>         <span class="fu">geom_boxplot</span>(<span class="at">outlier.shape=</span> <span class="cn">NA</span>, <span class="at">lwd =</span> <span class="fl">0.2</span>, <span class="at">color =</span> <span class="st">"#000000"</span>, <span class="at">fill =</span> stype3_cols) <span class="sc">+</span></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>         <span class="fu">ylim</span>(<span class="fl">0.3</span>, <span class="fl">1.4</span>) <span class="sc">+</span> </span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>         plot.theme <span class="sc">+</span></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>         <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>         axistheme1<span class="sc">+</span></span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>         <span class="fu">stat_compare_means</span>(<span class="at">method =</span> <span class="st">"wilcox.test"</span>,</span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>                            <span class="at">comparisons =</span> my_comparisons,</span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>                            <span class="at">hide.ns =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>                            <span class="at">bracket.size =</span> <span class="fl">0.2</span>,</span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>                            <span class="at">vjust =</span> <span class="fl">0.8</span>,</span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>                            <span class="fu">aes</span>(<span class="at">label =</span> ..p.signif..)))</span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> p2<span class="sc">|</span>p1<span class="sc">|</span>p3</span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{res_dir}/fig1sup4_stype3_area_ecce_boxplot.pdf"</span>), p, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">5</span>)       </span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="figure1_files/figure-html/figure1sup4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="figure1sup5a" class="level2">
+<h2 class="anchored" data-anchor-id="figure1sup5a">figure1sup5a</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># theme</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>plot.theme <span class="ot">&lt;-</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>axistheme2 <span class="ot">&lt;-</span> <span class="fu">theme</span>(<span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>),</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">6</span>),</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">axis.title.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>                    <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>                    <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">linewidth =</span> .<span class="dv">4</span>, <span class="at">colour =</span> <span class="st">"black"</span>),</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>                    <span class="at">axis.ticks.y =</span> <span class="fu">element_line</span>(<span class="at">linewidth =</span> .<span class="dv">4</span>, <span class="at">colour =</span> <span class="st">"black"</span>),</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>                    <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>                    <span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co"># plot function</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>boxplot_clinical <span class="ot">&lt;-</span> <span class="cf">function</span> (<span class="at">df =</span> df, <span class="at">sel_group =</span> <span class="st">"stage"</span>, <span class="at">celltype =</span> <span class="st">"DC"</span>, <span class="at">axistheme =</span> axistheme1, <span class="at">wd =</span> .<span class="dv">3</span>,</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>                              <span class="at">ylim =</span> <span class="dv">400</span>, <span class="at">label_y =</span> <span class="fu">c</span>(<span class="fl">0.4</span>,<span class="fl">0.5</span>,<span class="fl">0.6</span>), <span class="at">compare =</span> compare_list, <span class="at">fil_col =</span> <span class="cn">NULL</span>) {</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>  <span class="co">#colors &lt;- list(color2, color3)</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># dot_colors &lt;- list(dot_color2, dot_color3)</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>  plot.theme <span class="ot">&lt;-</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>  comparisons_n <span class="ot">&lt;-</span> <span class="fu">length</span>(compare) <span class="sc">+</span> <span class="dv">2</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>  p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes_string</span>(sel_group, celltype)) <span class="sc">+</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>(<span class="at">outlier.shape =</span> <span class="cn">NA</span>, <span class="at">width =</span> wd,</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>                 <span class="at">lwd =</span> <span class="fl">0.2</span>, <span class="at">color =</span> <span class="st">"#000000"</span>, <span class="fu">aes</span>(<span class="at">fill =</span> <span class="sc">!!</span><span class="fu">sym</span>(sel_group))) <span class="sc">+</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>, ylim), <span class="at">oob =</span> scales<span class="sc">::</span>rescale_none) <span class="sc">+</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> fil_col) <span class="sc">+</span></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>    plot.theme <span class="sc">+</span> axistheme <span class="sc">+</span></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stat_compare_means</span>(<span class="at">method =</span> <span class="st">"t.test"</span>, <span class="at">comparisons =</span> compare,</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>                       <span class="at">hide.ns =</span> <span class="cn">TRUE</span>, <span class="at">bracket.size =</span> <span class="fl">0.2</span>, <span class="at">vjust =</span> <span class="fl">0.6</span>,</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>                       <span class="at">label.y =</span> label_y, <span class="at">tip.length =</span> <span class="fl">0.01</span>,</span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">aes</span>(<span class="at">label =</span> ..p.signif..))</span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(p)</span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a><span class="co"># all immnue cells</span></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>immu_cols <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Macrophage_HLADRp"</span>,<span class="st">"MDSC"</span>, <span class="st">"Macrophage_HLADRp_CD163p"</span>,</span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>               <span class="st">"MMT_HLADRp_CD163p"</span>, <span class="st">"DC"</span>, <span class="st">"MMT_HLADRp"</span>, <span class="st">"Monocyte"</span>,</span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>               <span class="st">"MMT_HLADRn_CD163n"</span>, <span class="st">"CD8T"</span>, <span class="st">"Macrophage_CD163p"</span>,</span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>               <span class="st">"CD4T"</span>, <span class="st">"Macrophage_HLADRn_CD163n"</span>, <span class="st">"Bcell"</span>)</span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a><span class="co"># tumor_para_normal</span></span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>sampleinfo <span class="ot">&lt;-</span> sinfo <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(sample_id, stype2) <span class="sc">%&gt;%</span> <span class="fu">distinct</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(stype2 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"normal"</span>, <span class="st">"paracancerous"</span>, <span class="st">"tumor"</span>))</span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>tp_df <span class="ot">&lt;-</span> metadata[[<span class="st">"cell_ratio"</span>]] <span class="sc">%&gt;%</span> <span class="fu">inner_join</span>(sampleinfo, <span class="at">by =</span> <span class="st">"sample_id"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Epithelial =</span> Epithelial_normal <span class="sc">+</span> Epithelial_tumor) <span class="sc">%&gt;%</span></span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Fibroblast =</span> PSC <span class="sc">+</span> mCAF <span class="sc">+</span> CAF_col1p) <span class="sc">%&gt;%</span></span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">immunecells =</span> <span class="fu">sum</span>(<span class="fu">c_across</span>(<span class="fu">all_of</span>(immu_cols)))) <span class="sc">%&gt;%</span></span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">stype2 =</span> <span class="fu">case_when</span>(stype2 <span class="sc">==</span> <span class="st">"tumor"</span> <span class="sc">~</span> <span class="st">"Tumor"</span>,</span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>                                   stype2 <span class="sc">==</span> <span class="st">"normal"</span> <span class="sc">~</span> <span class="st">"Normal"</span>,</span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a>                                   stype2 <span class="sc">==</span> <span class="st">"paracancerous"</span> <span class="sc">~</span> <span class="st">"Paracancerous"</span>))</span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a>my_comparisons_tp <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="st">"Normal"</span>,<span class="st">"Paracancerous"</span>), <span class="fu">c</span>(<span class="st">"Normal"</span>, <span class="st">"Tumor"</span>), <span class="fu">c</span>(<span class="st">"Paracancerous"</span>, <span class="st">"Tumor"</span>))</span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a>tp_df<span class="sc">$</span>stype2<span class="ot">&lt;-</span> <span class="fu">factor</span>(tp_df<span class="sc">$</span>stype2, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Normal"</span>, <span class="st">"Paracancerous"</span>, <span class="st">"Tumor"</span>))</span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a>fil_c <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Tumor"</span> <span class="ot">=</span> <span class="st">"#BC3C29FF"</span>, <span class="st">"Paracancerous"</span> <span class="ot">=</span> <span class="st">"#0072B5FF"</span>, <span class="st">"Normal"</span> <span class="ot">=</span> <span class="st">"#E18727FF"</span>)</span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">boxplot_clinical</span>(<span class="at">df =</span> tp_df, <span class="at">sel_group =</span> <span class="st">"stype2"</span>, <span class="at">celltype =</span> <span class="st">"Epithelial_tumor"</span>, <span class="at">fil_col =</span> fil_c, <span class="at">wd =</span> .<span class="dv">4</span>,</span>
+<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a>                       <span class="at">axistheme =</span> axistheme2, <span class="at">ylim =</span> <span class="fl">0.7</span>, <span class="at">label_y =</span> <span class="fu">c</span>(<span class="fl">0.5</span>,<span class="fl">0.55</span>,<span class="fl">0.6</span>), <span class="at">compare =</span> my_comparisons_tp)</span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">boxplot_clinical</span>(<span class="at">df =</span> tp_df, <span class="at">sel_group =</span> <span class="st">"stype2"</span>, <span class="at">celltype =</span> <span class="st">"mCAF"</span>, <span class="at">fil_col =</span> fil_c, <span class="at">wd =</span> .<span class="dv">4</span>,</span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a>                       <span class="at">axistheme =</span> axistheme2, <span class="at">ylim =</span> <span class="fl">0.8</span>, <span class="at">label_y =</span> <span class="fu">c</span>(<span class="fl">0.6</span>,<span class="fl">0.65</span>,<span class="fl">0.7</span>), <span class="at">compare =</span> my_comparisons_tp)</span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> <span class="fu">boxplot_clinical</span>(<span class="at">df =</span> tp_df, <span class="at">sel_group =</span> <span class="st">"stype2"</span>, <span class="at">celltype =</span> <span class="st">"CAF_col1p"</span>, <span class="at">fil_col =</span> fil_c, <span class="at">wd =</span> .<span class="dv">4</span>,</span>
+<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a>                       <span class="at">axistheme =</span> axistheme2, <span class="at">ylim =</span> <span class="fl">0.3</span>, <span class="at">label_y =</span> <span class="fu">c</span>(<span class="fl">0.2</span>,<span class="fl">0.23</span>,<span class="fl">0.26</span>), <span class="at">compare =</span> my_comparisons_tp)</span>
+<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a>p4 <span class="ot">&lt;-</span> <span class="fu">boxplot_clinical</span>(<span class="at">df =</span> tp_df, <span class="at">sel_group =</span> <span class="st">"stype2"</span>, <span class="at">celltype =</span> <span class="st">"Macrophage_HLADRn_CD163n"</span>, <span class="at">fil_col =</span> fil_c, <span class="at">wd =</span> .<span class="dv">4</span>,</span>
+<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a>                       <span class="at">axistheme =</span> axistheme2, <span class="at">ylim =</span> <span class="fl">0.4</span>, <span class="at">label_y =</span> <span class="fu">c</span>(<span class="fl">0.3</span>,<span class="fl">0.33</span>,<span class="fl">0.36</span>), <span class="at">compare =</span> my_comparisons_tp)</span>
+<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a>p5 <span class="ot">&lt;-</span> <span class="fu">boxplot_clinical</span>(<span class="at">df =</span> tp_df, <span class="at">sel_group =</span> <span class="st">"stype2"</span>, <span class="at">celltype =</span> <span class="st">"MMT_HLADRn_CD163n"</span>, <span class="at">fil_col =</span> fil_c, <span class="at">wd =</span> .<span class="dv">4</span>,</span>
+<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a>                       <span class="at">axistheme =</span> axistheme2, <span class="at">ylim =</span> <span class="fl">0.2</span>, <span class="at">label_y =</span> <span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.13</span>,<span class="fl">0.16</span>), <span class="at">compare =</span> my_comparisons_tp)</span>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a>p6 <span class="ot">&lt;-</span> <span class="fu">boxplot_clinical</span>(<span class="at">df =</span> tp_df, <span class="at">sel_group =</span> <span class="st">"stype2"</span>, <span class="at">celltype =</span> <span class="st">"CD8T"</span>, <span class="at">fil_col =</span> fil_c, <span class="at">wd =</span> .<span class="dv">4</span>,</span>
+<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a>                       <span class="at">axistheme =</span> axistheme2, <span class="at">ylim =</span> <span class="fl">0.1</span>, <span class="at">label_y =</span> <span class="fu">c</span>(<span class="fl">0.05</span>,<span class="fl">0.07</span>,<span class="fl">0.09</span>), <span class="at">compare =</span> my_comparisons_tp)</span>
+<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a>p7 <span class="ot">&lt;-</span> <span class="fu">boxplot_clinical</span>(<span class="at">df =</span> tp_df, <span class="at">sel_group =</span> <span class="st">"stype2"</span>, <span class="at">celltype =</span> <span class="st">"CD4T"</span>, <span class="at">fil_col =</span> fil_c, <span class="at">wd =</span> .<span class="dv">4</span>,</span>
+<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a>                       <span class="at">axistheme =</span> axistheme2, <span class="at">ylim =</span> <span class="fl">0.005</span>, <span class="at">label_y =</span> <span class="fu">c</span>(<span class="fl">0.0005</span>,<span class="fl">0.0006</span>,<span class="fl">0.0007</span>), <span class="at">compare =</span> my_comparisons_tp)</span>
+<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a>p8 <span class="ot">&lt;-</span> <span class="fu">boxplot_clinical</span>(<span class="at">df =</span> tp_df, <span class="at">sel_group =</span> <span class="st">"stype2"</span>, <span class="at">celltype =</span> <span class="st">"Monocyte"</span>, <span class="at">fil_col =</span> fil_c, <span class="at">wd =</span> .<span class="dv">4</span>,</span>
+<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a>                       <span class="at">axistheme =</span> axistheme2, <span class="at">ylim =</span> <span class="fl">0.03</span>, <span class="at">label_y =</span> <span class="fu">c</span>(<span class="fl">0.02</span>,<span class="fl">0.023</span>,<span class="fl">0.026</span>), <span class="at">compare =</span> my_comparisons_tp)</span>
+<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a>p9 <span class="ot">&lt;-</span> <span class="fu">boxplot_clinical</span>(<span class="at">df =</span> tp_df, <span class="at">sel_group =</span> <span class="st">"stype2"</span>, <span class="at">celltype =</span> <span class="st">"immunecells"</span>, <span class="at">fil_col =</span> fil_c, <span class="at">wd =</span> .<span class="dv">4</span>,</span>
+<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a>                       <span class="at">axistheme =</span> axistheme2, <span class="at">ylim =</span> <span class="dv">1</span>, <span class="at">label_y =</span> <span class="fu">c</span>(<span class="fl">0.8</span>,<span class="fl">0.85</span>,<span class="fl">0.9</span>), <span class="at">compare =</span> my_comparisons_tp)</span>
+<span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> (p1<span class="sc">|</span>p2<span class="sc">|</span>p3<span class="sc">|</span>p9<span class="sc">|</span><span class="fu">plot_spacer</span>())<span class="sc">/</span>(p4<span class="sc">|</span>p5<span class="sc">|</span>p6<span class="sc">|</span>p7<span class="sc">|</span>p8)</span>
+<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{res_dir}/figure1sup5a_cellprop_tumor_para.pdf"</span>), p, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">4</span>)</span>
+<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="figure1_files/figure-html/figure1sup5a-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="figure1sup5b" class="level2">
+<h2 class="anchored" data-anchor-id="figure1sup5b">figure1sup5b</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># stages_tme</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>stages_tme <span class="ot">&lt;-</span> metadata[[<span class="st">"stages_tme"</span>]] <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(patient_id, stage) <span class="sc">%&gt;%</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">patient_id =</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{patient_id}_pdac"</span>)) </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>st_df <span class="ot">&lt;-</span> metadata[[<span class="st">"cell_ratio"</span>]] <span class="sc">%&gt;%</span> <span class="fu">inner_join</span>(stages_tme, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"sample_id"</span> <span class="ot">=</span> <span class="st">"patient_id"</span>))</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>my_comparisons_st <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="st">"RPC"</span>, <span class="st">"BRPC_LAPC"</span>), <span class="fu">c</span>(<span class="st">"RPC"</span>, <span class="st">"MPC"</span>), <span class="fu">c</span>(<span class="st">"BRPC_LAPC"</span>, <span class="st">"MPC"</span>))</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>st_df<span class="sc">$</span>stage <span class="ot">&lt;-</span> <span class="fu">factor</span>(st_df<span class="sc">$</span>stage, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"MPC"</span>, <span class="st">"BRPC_LAPC"</span>, <span class="st">"RPC"</span>) <span class="sc">%&gt;%</span> <span class="fu">rev</span>())</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>fil_c <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"MPC"</span> <span class="ot">=</span> <span class="st">"#BC3C29FF"</span>, <span class="st">"BRPC_LAPC"</span> <span class="ot">=</span> <span class="st">"#0072B5FF"</span>, <span class="st">"RPC"</span> <span class="ot">=</span> <span class="st">"#E18727FF"</span>)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">boxplot_clinical</span>(<span class="at">df =</span> st_df, <span class="at">sel_group =</span> <span class="st">"stage"</span>, <span class="at">celltype =</span> <span class="st">"Macrophage_HLADRn_CD163n"</span>, <span class="at">fil_col =</span> fil_c, <span class="at">wd =</span> .<span class="dv">4</span>,</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>                        <span class="at">axistheme =</span> axistheme2, <span class="at">ylim =</span> <span class="fl">0.5</span>, <span class="at">label_y =</span> <span class="fu">c</span>(<span class="fl">0.35</span>,<span class="fl">0.4</span>,<span class="fl">0.45</span>), <span class="at">compare =</span> my_comparisons_st)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">boxplot_clinical</span>(<span class="at">df =</span> st_df, <span class="at">sel_group =</span> <span class="st">"stage"</span>, <span class="at">celltype =</span> <span class="st">"mCAF"</span>, <span class="at">fil_col =</span> fil_c, <span class="at">wd =</span> .<span class="dv">4</span>,</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>                       <span class="at">axistheme =</span> axistheme2, <span class="at">ylim =</span> <span class="fl">1.0</span>, <span class="at">label_y =</span> <span class="fu">c</span>(<span class="fl">0.7</span>,<span class="fl">0.8</span>,<span class="fl">0.9</span>), <span class="at">compare =</span> my_comparisons_st)</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> p1<span class="sc">|</span>p2</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{res_dir}/figure1sup5b_cellprop_stages_tme.pdf"</span>), p, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">4</span>)</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="figure1_files/figure-html/figure1sup5b-1.png" class="img-fluid figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="figure1sup5c" class="level2">
+<h2 class="anchored" data-anchor-id="figure1sup5c">figure1sup5c</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mpc_primary_metastasis</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>sampleinfo <span class="ot">&lt;-</span> sinfo <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(sample_id, stype2) <span class="sc">%&gt;%</span> <span class="fu">distinct</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(stype2 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"puncture_pdac"</span>, <span class="st">"puncture_liver"</span>))</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>mpm_df <span class="ot">&lt;-</span> metadata[[<span class="st">"cell_ratio"</span>]] <span class="sc">%&gt;%</span> <span class="fu">inner_join</span>(sampleinfo, <span class="at">by =</span> <span class="st">"sample_id"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">stype2 =</span> <span class="fu">case_when</span>(stype2 <span class="sc">==</span> <span class="st">"puncture_pdac"</span> <span class="sc">~</span> <span class="st">"Biopsy pancreas"</span>,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>                                   stype2 <span class="sc">==</span> <span class="st">"puncture_liver"</span> <span class="sc">~</span> <span class="st">"Biopsy liver"</span>))</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>my_comparisons_mpm <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="st">"Biopsy pancreas"</span>, <span class="st">"Biopsy liver"</span>))</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>mpm_df<span class="sc">$</span>stype2<span class="ot">&lt;-</span> <span class="fu">factor</span>(mpm_df<span class="sc">$</span>stype2, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Biopsy pancreas"</span>, <span class="st">"Biopsy liver"</span>) <span class="sc">%&gt;%</span> <span class="fu">rev</span>())</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>fil_c <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Biopsy pancreas"</span> <span class="ot">=</span> <span class="st">"#BC3C29FF"</span>, <span class="st">"Biopsy liver"</span> <span class="ot">=</span> <span class="st">"#0072B5FF"</span>)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">boxplot_clinical</span>(<span class="at">df =</span> mpm_df, <span class="at">sel_group =</span> <span class="st">"stype2"</span>, <span class="at">celltype =</span> <span class="st">"CD8T"</span>, <span class="at">fil_col =</span> fil_c,</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>                       <span class="at">axistheme =</span> axistheme2, <span class="at">ylim =</span> <span class="fl">0.025</span>, <span class="at">label_y =</span> <span class="fl">0.015</span>, <span class="at">compare =</span> my_comparisons_mpm)</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">boxplot_clinical</span>(<span class="at">df =</span> mpm_df, <span class="at">sel_group =</span> <span class="st">"stype2"</span>, <span class="at">celltype =</span> <span class="st">"Macrophage_HLADRn_CD163n"</span>, <span class="at">fil_col =</span> fil_c,</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>                       <span class="at">axistheme =</span> axistheme2, <span class="at">ylim =</span> <span class="fl">0.6</span>, <span class="at">label_y =</span> <span class="fl">0.5</span>, <span class="at">compare =</span> my_comparisons_mpm)</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> <span class="fu">boxplot_clinical</span>(<span class="at">df =</span> mpm_df, <span class="at">sel_group =</span> <span class="st">"stype2"</span>, <span class="at">celltype =</span> <span class="st">"mCAF"</span>, <span class="at">fil_col =</span> fil_c,</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>                       <span class="at">axistheme =</span> axistheme2, <span class="at">ylim =</span> <span class="fl">0.8</span>, <span class="at">label_y =</span> <span class="fl">0.7</span>, <span class="at">compare =</span> my_comparisons_mpm)</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> p1<span class="sc">|</span>p2<span class="sc">|</span>p3</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{res_dir}/figure1sup5c_cellprop_metastasis.pdf"</span>), p, <span class="at">width =</span> <span class="fl">3.6</span>, <span class="at">height =</span> <span class="dv">4</span>)</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="figure1_files/figure-html/figure1sup5c-1.png" class="img-fluid figure-img" width="345"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="figure1sup5d" class="level2">
+<h2 class="anchored" data-anchor-id="figure1sup5d">figure1sup5d</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>neoadj_vs_direct_surgery1 <span class="ot">&lt;-</span> metadata[[<span class="st">"neoadj_vs_direct_surgery"</span>]] <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(patient_id, treatment_type) <span class="sc">%&gt;%</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">patient_id =</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{patient_id}_pdac"</span>))</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>neoadj_vs_direct_surgery2 <span class="ot">&lt;-</span> metadata[[<span class="st">"neoadj_vs_direct_surgery"</span>]] <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(patient_id, treatment_type) <span class="sc">%&gt;%</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">patient_id =</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{patient_id}_ca"</span>))</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>neoadj_vs_direct_surgery <span class="ot">&lt;-</span> <span class="fu">rbind</span>(neoadj_vs_direct_surgery1, neoadj_vs_direct_surgery2) <span class="sc">%&gt;%</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">treatment_type =</span> <span class="fu">case_when</span>(treatment_type <span class="sc">==</span> <span class="st">"surgery_after_chemo"</span> <span class="sc">~</span> <span class="st">"Surgery after chemo"</span>,</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>                                           treatment_type <span class="sc">==</span> <span class="st">"direct_surgery"</span> <span class="sc">~</span> <span class="st">"Upfront surgery"</span>))</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>nds_df <span class="ot">&lt;-</span> metadata[[<span class="st">"cell_ratio"</span>]] <span class="sc">%&gt;%</span> <span class="fu">inner_join</span>(neoadj_vs_direct_surgery, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"sample_id"</span> <span class="ot">=</span> <span class="st">"patient_id"</span>))</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>my_comparisons_nds <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="st">"Upfront surgery"</span>, <span class="st">"Surgery after chemo"</span>))</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>nds_df<span class="sc">$</span>treatment_group<span class="ot">&lt;-</span> <span class="fu">factor</span>(nds_df<span class="sc">$</span>treatment_type, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Upfront surgery"</span>, <span class="st">"Surgery after chemo"</span>)<span class="sc">%&gt;%</span> <span class="fu">rev</span>())</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>fil_c <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Upfront surgery"</span> <span class="ot">=</span> <span class="st">"#BC3C29FF"</span>, <span class="st">"Surgery after chemo"</span> <span class="ot">=</span> <span class="st">"#0072B5FF"</span>)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">boxplot_clinical</span>(<span class="at">df =</span> nds_df, <span class="at">sel_group =</span> <span class="st">"treatment_group"</span>, <span class="at">celltype =</span> <span class="st">"Epithelial_tumor"</span>, <span class="at">fil_col =</span> fil_c,</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>                       <span class="at">axistheme =</span> axistheme2, <span class="at">ylim =</span> <span class="fl">0.7</span>, <span class="at">label_y =</span> <span class="fl">0.6</span>, <span class="at">compare =</span> my_comparisons_nds)</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">boxplot_clinical</span>(<span class="at">df =</span> nds_df, <span class="at">sel_group =</span> <span class="st">"treatment_group"</span>, <span class="at">celltype =</span> <span class="st">"CAF_col1p"</span>, <span class="at">fil_col =</span> fil_c,</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>                       <span class="at">axistheme =</span> axistheme2, <span class="at">ylim =</span> <span class="fl">0.5</span>, <span class="at">label_y =</span> <span class="fl">0.4</span>, <span class="at">compare =</span> my_comparisons_nds)</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> <span class="fu">boxplot_clinical</span>(<span class="at">df =</span> nds_df, <span class="at">sel_group =</span> <span class="st">"treatment_group"</span>, <span class="at">celltype =</span> <span class="st">"MMT_HLADRp"</span>, <span class="at">fil_col =</span> fil_c,</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>                       <span class="at">axistheme =</span> axistheme2, <span class="at">ylim =</span> <span class="fl">0.4</span>, <span class="at">label_y =</span> <span class="fl">0.3</span>, <span class="at">compare =</span> my_comparisons_nds)</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>p4 <span class="ot">&lt;-</span> <span class="fu">boxplot_clinical</span>(<span class="at">df =</span> nds_df, <span class="at">sel_group =</span> <span class="st">"treatment_group"</span>, <span class="at">celltype =</span> <span class="st">"CD4T"</span>, <span class="at">fil_col =</span> fil_c,</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>                       <span class="at">axistheme =</span> axistheme2, <span class="at">ylim =</span> <span class="fl">0.03</span>, <span class="at">label_y =</span> <span class="fl">0.02</span>, <span class="at">compare =</span> my_comparisons_nds)</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>p5 <span class="ot">&lt;-</span> <span class="fu">boxplot_clinical</span>(<span class="at">df =</span> nds_df, <span class="at">sel_group =</span> <span class="st">"treatment_group"</span>, <span class="at">celltype =</span> <span class="st">"Macrophage_HLADRn_CD163n"</span>, <span class="at">fil_col =</span> fil_c,</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>                       <span class="at">axistheme =</span> axistheme2, <span class="at">ylim =</span> <span class="fl">0.4</span>, <span class="at">label_y =</span> <span class="fl">0.3</span>, <span class="at">compare =</span> my_comparisons_nds)</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> p1<span class="sc">|</span>p2<span class="sc">|</span>p3<span class="sc">|</span>p4<span class="sc">|</span>p5</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{res_dir}/figure1sup5d_cellprop_chemo.pdf"</span>), p, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">4</span>)</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="figure1_files/figure-html/figure1sup5d-1.png" class="img-fluid figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./figure2.html" class="pagination-link" aria-label="figure2">
+        <span class="nav-page-text"><span class="chapter-title">figure2</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
